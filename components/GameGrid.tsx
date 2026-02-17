@@ -19,7 +19,7 @@ export function GameGrid({ rows, maxRows }: GameGridProps) {
           statuses: Array(MAX_CELLS).fill(null) as LetterStatus[],
         };
         return (
-          <div key={rowIndex} className="flex justify-center gap-2">
+          <div key={rowIndex} className="flex justify-center gap-0.5 sm:gap-2">
             {Array.from({ length: MAX_CELLS }).map((_, colIndex) => (
               <Cell
                 key={colIndex}

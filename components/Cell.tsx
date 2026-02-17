@@ -15,7 +15,7 @@ export function Cell({ letter, status }: CellProps) {
 
   return (
     <div
-      className={`flex h-12 w-12 shrink-0 items-center justify-center rounded border-2 text-xl font-bold uppercase transition-colors sm:h-14 sm:w-14 sm:text-2xl ${statusStyles[status ?? "null"]}`}
+      className={`flex h-10 w-10 shrink-0 items-center justify-center rounded border-2 text-lg font-bold uppercase transition-colors sm:h-14 sm:w-14 sm:text-2xl ${statusStyles[status ?? "null"]}`}
     >
       {letter ?? ""}
     </div>
