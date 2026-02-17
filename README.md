@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# IJL Wordle
 
-## Getting Started
+アルファベットと数字を使った Wordle 風パズルゲーム（Next.js）
 
-First, run the development server:
+## ルール
+
+- **文字**: 英字（a-z）+ 数字（0-9）、最大 8 文字
+- **入力**: 単語リストにある単語なら 1〜8 文字で何文字でも可
+- **試行**: 最大 6 回
+- **正解**: 日付ごとに固定（同日は同じ単語）
+
+## 色の意味
+
+- 🟩 緑: 位置も一致
+- 🟨 黄: 正解に含まれる（別の位置）
+- ⬛ 黒: 不正解・未使用
+
+## 開発
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+[http://localhost:3000](http://localhost:3000) で開く
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ビルド
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## 単語リストのカスタム
 
-To learn more about Next.js, take a look at the following resources:
+`lib/words.ts` の `WORD_LIST` を編集する。
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- 英字と数字のみ
+- 8 文字以内（`.filter((word) => word.length <= 8)` で制限）
+- 正解候補・入力可能単語は同じリスト
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## デプロイ
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Vercel 等にそのままデプロイ可能。
