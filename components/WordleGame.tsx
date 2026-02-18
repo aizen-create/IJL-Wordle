@@ -20,7 +20,7 @@ function rowsToEmoji(rows: Row[]): string {
 import { GameGrid } from "./GameGrid";
 import { Keyboard } from "./Keyboard";
 
-const MAX_GUESSES = 6;
+const MAX_GUESSES = 5;
 
 type Row = { letters: (string | null)[]; statuses: LetterStatus[] };
 
