@@ -149,7 +149,7 @@ export function WordleGame() {
     <div className="flex flex-col items-center gap-6 p-4">
       <h1 className="text-3xl font-bold tracking-wider">IJL WORDLE</h1>
       <p className="text-sm text-zinc-500">
-        単語を当ててください（1〜8文字、最大{MAX_GUESSES}回）
+        IJL選手名を当ててください（1〜8文字、最大{MAX_GUESSES}回）
       </p>
 
       {error && (
