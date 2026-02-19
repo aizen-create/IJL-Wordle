@@ -188,7 +188,8 @@ export function WordleGame() {
                 type="button"
                 onClick={async () => {
                   try {
-                    await navigator.clipboard.writeText(rowsToEmoji(rows));
+                    const header = `IJL wordle ${puzzleDate} ${rows.length}/5 https://0fe19a62.ijl-wordle.pages.dev/\n`;
+                    await navigator.clipboard.writeText(header + rowsToEmoji(rows));
                     setCopyMessage("コピーしました");
                     setTimeout(() => setCopyMessage(null), 1500);
                   } catch {
@@ -205,7 +206,7 @@ export function WordleGame() {
                   type="button"
                   onClick={async () => {
                     try {
-                      const text = `IJL wordle ${puzzleDate} （${rows.length}）回で正解！`;
+                      const text = `IJL wordle ${puzzleDate} ${rows.length}/5 https://0fe19a62.ijl-wordle.pages.dev/`;
                       await navigator.clipboard.writeText(text);
                       setCopyMessage("コピーしました");
                       setTimeout(() => setCopyMessage(null), 1500);
